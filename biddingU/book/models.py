@@ -1,11 +1,5 @@
 from django.db import models
 
-class user(models.Model):
-    name = models.CharField(max_length=20)
-    password = models.CharField(max_length=20)
-    level = models.CharField(max_length=10)
-    phone_number = models.IntegerField(default=0)
-
 class auction_list(models.Model):
     item_id = models.IntegerField(default=0)
     due_date = models.DateField()

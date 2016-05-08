@@ -1,2 +1,6 @@
 just test
+<<<<<<< HEAD
 just test 2
+=======
+test 2
+>>>>>>> juyoung

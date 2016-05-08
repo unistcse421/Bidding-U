@@ -8,7 +8,7 @@ from django.db import models
 class auction_list(models.Model):
 	auction_id = models.AutoField(primary_key=True)
 	item_id = models.IntegerField(default=0)
-	due_date = models.DateTimeField()
+	due_date = models.DateTimeField(auto_now_add = True)
 	current_price = models.IntegerField(default=0)
 	book_id =  models.IntegerField(default=0)
 	bidding_state = 

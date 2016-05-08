@@ -5,15 +5,15 @@ from django.db import models
 # Create your models here.
 
 class item_information(models.Model):
-	item_id = models.IntegerField(auto_now_add=True)
+	item_id = models.AutoField(primary_key=True)
 	user_id = models.IntegerField(default=0)
 	reserved_price = models.IntegerField(default=0)
 	state = models.CharField(max_length=3)
 	book_number = models.IntegerField(default=0)
 
 class book_list(models.Model):
-	book_id = models.IntegerField(auto_now_add=True)
+	book_id = models.AutoField(primary_key=True)
 	book_name = models.CharField(max_length=200)
-	author =
+	author = CharField(max_length=20)
 	price = models.IntegerField(default=0)
-	edition = 
+	edition = models.IntegerField(default=0)

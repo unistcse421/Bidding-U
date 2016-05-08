@@ -8,5 +8,5 @@ class candidate_list(models.Model):
         user_id = models.IntegerField(default=0)
         auction_id = models.IntegerField(default=0)
         suggest_price = models.IntegerField(default=0)
-        suggest_time = models.DateTimeField()
+        suggest_time = models.DateTimeField(a)
 

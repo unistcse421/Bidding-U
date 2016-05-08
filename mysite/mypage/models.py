@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 
 class item_information(models.Model):
-        item_id = models.IntegerField(auto_now_add=True)
+	item_id = models.IntegerField(auto_now_add=True)
 	user_id = models.IntegerField(default=0)
 	reserved_price = models.IntegerField(default=0)
 	state = models.CharField(max_length=3)

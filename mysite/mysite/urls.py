@@ -10,9 +10,9 @@ urlpatterns = [
     url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^account/", include("account.urls")),
-	url(r"^mypage/", include("mypage.urls")),
-	url(r"^auction/", include("auction.urls")),
-	url(r"^bidding/", include("bidding.urls")),
+    url(r"^mypage/", include("mypage.urls")),
+    url(r"^auction/", include("auction.urls")),
+    url(r"^bidding/", include("bidding.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

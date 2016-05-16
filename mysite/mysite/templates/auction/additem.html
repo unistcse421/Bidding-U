@@ -1,5 +1,6 @@
 {% extends "site_base.html" %}
 
+
 {% load i18n %}
 
 {% block head_title %}pinax-project-account{% endblock %}
@@ -10,13 +11,13 @@
 	<section class="jumbotron">
 		<div class="container">
 			{% include "_messages.html" %}
-			<h1>{% blocktrans %}AUCTION LIST{% endblocktrans %}</h1>
+			<h1>{% blocktrans %}ADD YOUR ITEM{% endblocktrans %}</h1>
 		</div>
 	</section>
 	<section>
 		<div class="container">
 			<form method="get">
-				<input type="submit" name="itemadd" value="Add Item" />
+				<input type="submit" name="add" value="ADD" />
 			</form>
 		</div>
 	</section>

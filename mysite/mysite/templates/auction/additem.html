@@ -16,8 +16,10 @@
 	</section>
 	<section>
 		<div class="container">
-			<form method="get">
-				<input type="submit" name="add" value="ADD" />
+			<form method="POST">
+		                {% csrf_token %}
+		                {{form.as_p}}
+				<input type="submit" name="add" value="ADD" />			
 			</form>
 		</div>
 	</section>

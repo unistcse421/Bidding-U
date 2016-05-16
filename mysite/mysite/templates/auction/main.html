@@ -15,9 +15,16 @@
 	</section>
 	<section>
 		<div class="container">
-			<form method="get">
+			<form method="POST">
+	                	{% csrf_token %}
+        		        {{form.as_p}}
 				<input type="submit" name="itemadd" value="Add Item" />
 			</form>
+                        <form method="POST">
+				{% csrf_token %}
+			        {{form.as_p}}
+                                <input type="submit" name="auctionadd" value="Add Auction" />
+                        </form>
 		</div>
 	</section>
 

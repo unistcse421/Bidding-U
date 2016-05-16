@@ -10,3 +10,4 @@ class candidate_list(models.Model):
         suggest_price = models.IntegerField(default=0)
         suggest_time = models.DateTimeField(auto_now_add = True)
 
+

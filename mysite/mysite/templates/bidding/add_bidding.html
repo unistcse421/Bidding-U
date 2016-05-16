@@ -1,0 +1,18 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %} Add-Bidding {% endblock %}
+
+{% block body_base %}
+	<h1>{% blocktrans %} Bidding {% endblocktrans %} </h1>
+	<p>{% blocktrans %} Title {% endblocktrans %}</p>
+	<p>{% blocktrans %} Current Price {% endblocktrans %}</p>
+	<p>{% blocktrans %} My Price {% endblocktrans %}</p>
+	<a href="bidding/bidding_list" class = "btn btn-primary">Bidding!</a>
+
+	 
+{% endblock %}
+
+
+

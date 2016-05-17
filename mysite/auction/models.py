@@ -8,13 +8,11 @@ from django.db import models
 class auction_list(models.Model):
 	auction_id = models.AutoField(primary_key=True)
 	item_id = models.IntegerField(default=0)
-	due_date = models.DateTimeField()
+	due_date = models.DateTimeField(default=0)
 	current_price = models.IntegerField(default=0)
 	book_id =  models.IntegerField(default=0)
 	bidding_state = models.IntegerField(default=0)
 	
-	class admin:
-		pass
 
 class success_auction(models.Model):
 	auction_id = models.AutoField(primary_key=True)
@@ -22,5 +20,3 @@ class success_auction(models.Model):
 	item_id = models.IntegerField(default=0)
 	price = models.IntegerField(default=0)
 
-	class admin:
-		pass

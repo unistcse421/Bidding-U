@@ -11,7 +11,7 @@ class ItemListForm(forms.ModelForm):
 	class Meta:
 		model = item_information
 		fields = ('user_id', 'book_number', 'reserved_price', 'state',)
-
+	
 class AuctionListForm(forms.ModelForm):
         class Meta:
                 model = auction_list
@@ -22,3 +22,8 @@ class SuccessAutionForm(forms.ModelForm):
 		model = success_auction
 		fields = ('user_id', 'item_id', 'price',)
 
+class SearchForm(forms.Form):
+	query = forms.CharField(
+		label = 'search the items',
+		widget = forms.TextInput(attrs={'size':32})
+	)

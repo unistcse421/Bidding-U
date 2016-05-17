@@ -14,18 +14,10 @@
 		</div>
 	</section>
 	<section>
-		<div class="container">
-			<form method="POST">
-	                	{% csrf_token %}
-        		        {{form.as_p}}
-				<input type="submit" name="itemadd" value="Add Item" />
-			</form>
-                        <form method="POST">
-				{% csrf_token %}
-			        {{form.as_p}}
-                                <input type="submit" name="auctionadd" value="Add Auction" />
-                        </form>
-		</div>
+
+	        <a href="auction/additem" class = "btn btn-primary">Add Item!</a>
+                <a href="auction/additem" class = "btn btn-primary">Add Auction!</a>
+
 	</section>
 
 {% endblock %}

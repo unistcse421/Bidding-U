@@ -13,6 +13,8 @@ class auction_list(models.Model):
 	book_id =  models.IntegerField(default=0)
 	bidding_state = models.IntegerField(default=0)
 	
+	class admin:
+		pass
 
 class success_auction(models.Model):
 	auction_id = models.AutoField(primary_key=True)
@@ -20,3 +22,5 @@ class success_auction(models.Model):
 	item_id = models.IntegerField(default=0)
 	price = models.IntegerField(default=0)
 
+	class admin:
+		pass

@@ -10,12 +10,12 @@ from mypage.models import item_information
 class ItemListForm(forms.ModelForm):
 	class Meta:
 		model = item_information
-		fields = ('user_id', 'book_number', 'reserved_price', 'state',)
-	
+		fields = ('book_number', 'reserved_price', 'state',)
+
 class AuctionListForm(forms.ModelForm):
         class Meta:
                 model = auction_list
-                fields = ('item_id', 'due_date', 'book_id', 'current_price', 'bidding_state',)
+                fields = ('due_date',)
 
 class SuccessAutionForm(forms.ModelForm):
 	class Meta:

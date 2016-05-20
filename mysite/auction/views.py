@@ -3,7 +3,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 from auction.forms import ItemListForm, AuctionListForm
 
-# Create your views here.
 
 def auction(request):
 	return render(request, 'auction/main.html', {})

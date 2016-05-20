@@ -1,0 +1,27 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}Auction list main{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block body_base %}
+	<section class="jumbotron">
+		<div class="container">
+			{% include "_messages.html" %}
+			<h1>{% blocktrans %}MY PAGE{% endblocktrans %}</h1>
+			<h2>{% blocktrans %}My item{% endblocktrans %}</h2>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+                        <a href="myitem" class = "btn btn-primary">My Item</a>
+                        <a href="mybidding" class = "btn btn-primary">My Bidding</a>
+                        <a href="winbidding" class = "btn btn-primary">Win Bidding</a>
+
+		</div>
+	</section>
+
+
+{% endblock %}

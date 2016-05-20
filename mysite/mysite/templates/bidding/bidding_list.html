@@ -4,6 +4,20 @@
 
 {% block head_title %} Bidding_List {% endblock %}
 
+{% block body_class %}home{% endblock %}
+
 {% block body_base %}
-	<h1>{% blocktrans %} Bidding_List {% endblocktrans %} </h1>
-{% endblock %}  
+        <section class="jumbotron">
+                <div class="container">
+                        {% include "_messages.html" %}
+                        <h1>{% blocktrans %}BIDDING LIST{% endblocktrans %}</h1>
+                </div>
+        </section>
+        <section>
+                <div class="container">
+                        <a href="addbidding" class = "btn btn-primary">BIDDING</a>
+                </div>
+        </section>
+
+{% endblock %}
+

@@ -7,4 +7,3 @@ urlpatterns = [
 	url(r"^itemadd/", views.add_item, name='additem'),
 	url(r"^auctionadd/", views.add_auction, name='addauction'),
 ]
-

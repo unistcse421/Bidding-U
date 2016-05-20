@@ -4,15 +4,20 @@ from django.db import models
 
 # Create your models here.
 
-
 class auction_list(models.Model):
+	Period = (
+		(1, '1 days'),
+		(3, '3 days'),
+		(5, '5 days'),
+		(7, '7 days'),
+	)
+
 	auction_id = models.AutoField(primary_key=True)
 	item_id = models.IntegerField(default=0)
-	due_date = models.DateTimeField(default=0)
+	due_date = models.IntegerField(choices=Period)
 	current_price = models.IntegerField(default=0)
 	book_id =  models.IntegerField(default=0)
-	bidding_state = models.IntegerField(default=0)
-	
+	bidding_state = models.BooleanField(default=False)
 
 class success_auction(models.Model):
 	auction_id = models.AutoField(primary_key=True)

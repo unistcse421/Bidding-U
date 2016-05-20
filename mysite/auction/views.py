@@ -13,7 +13,6 @@ def add_item(request):
 		if edit_form.is_valid():
 			post = edit_form.save(commit=False)
 			post.user_id = '0000'
-			post.item_id = '0000'
 			post.save()
 			edit_form.save_m2m()
 		return HttpResponseRedirect('../')

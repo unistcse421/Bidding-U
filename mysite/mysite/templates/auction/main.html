@@ -19,5 +19,14 @@
 			<a href="auctionadd" class = "btn btn-primary">Add Auction!</a>
 		</div>
 	</section>
+	<section>
+		<div class = "container">
+			{% for detail in list_detail %}
+				<h3> 
+					<p> {{detail.book_id}}  {{detail.current_price}} {{detail.due_date}}  {{detail.bidding_state}} </p>
+				</h3>
+			{% endfor %}
+		</div>
+	</section>
 
 {% endblock %}

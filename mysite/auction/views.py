@@ -1,11 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
-
+from auction.models import auction_list
 from auction.forms import ItemListForm, AuctionListForm
-
+from django.template import RequestContext
 
 def auction(request):
-	return render(request, 'auction/main.html', {})
+        all_entries = auction_list.objects.all()
+	data = {
+		"list_detail" : all_entries
+	}	
+	print data
+	return render_to_response('auction/main.html', data, context_instance = RequestContext(request))
+#	return render(request, 'auction/main.html', {})
 
 def add_item(request):
 	if(request.method == "POST"):
@@ -39,7 +45,8 @@ def add_auction(request):
 
 	return render(request, 'auction/addauction.html', {'form':edit_form,})
 
-#def search_page(request):
-#	form = SearchForm()
-#	bookname = []
 
+def search(request):
+	auction_list.objects
+	all_entries = auction_list.objects.all()
+	print(all_entries)

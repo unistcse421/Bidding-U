@@ -22,6 +22,17 @@
 
 		</div>
 	</section>
+        <section>
+                <div class = "container">
+                        {% for detail in list_detail %}
+                                <h3> 
+                                        <p> {{detail.book_number}}  {{detail.reserved_price}} {{detail.state}} {{detail.on_going}}  </p>
+                                </h3>
+                        {% endfor %}
+                </div>
+        </section>
+
+
 
 
 {% endblock %}

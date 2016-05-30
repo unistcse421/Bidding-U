@@ -32,11 +32,11 @@ def add_auction(request):
 		edit_form = AuctionListForm(request.POST)
                 if edit_form.is_valid():
                         post = edit_form.save(commit=False)
-                      	post.auction_id = '66'
+                      
 			post.item_id ='22'
 			post.current_price = '33'
 			post.book_id = '11'
-			post.bidding_state = '0'
+			post.bidding_state = False
 			post.save()
 			edit_form.save_m2m()
 		return HttpResponseRedirect('../')

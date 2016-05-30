@@ -31,8 +31,7 @@ def add_auction(request):
         if(request.method == "POST"):
 		edit_form = AuctionListForm(request.POST)
                 if edit_form.is_valid():
-                        post = edit_form.save(commit=False)
-                      
+                        post = edit_form.save(commit=False)                     
 			post.item_id ='22'
 			post.current_price = '33'
 			post.book_id = '11'

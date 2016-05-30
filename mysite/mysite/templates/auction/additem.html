@@ -3,7 +3,7 @@
 
 {% load i18n %}
 
-{% block head_title %}Add-Item{% endblock %}
+{% block head_title %}pinax-project-account{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
@@ -19,7 +19,7 @@
 			<form method="POST" class="post-form">
 		                {% csrf_token %}
 		                {{form.as_p}}
-				<input type="submit" value = ADD" />
+ 				<a href="../" class = "btn btn-primary">ADD!</a>
 			</form>
 		</div>
 	</section>

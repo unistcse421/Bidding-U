@@ -22,21 +22,27 @@
 
 		</div>
 	</section>
-        <section>
+	<section>
+		<div class = "container">
+                        <a href="../auction" class = "btn btn-primary">GO to list</a>
+		</div>
+	</section>
+        <seceion>
                 <div class = "container">
                         <table class = "table">
                         <tr>
-                                <th> book number </th>
-                                <th> reserved price </th>
-                                <th> book state </th>
-                                <th> auction-ing </th>
+                                <th> Book number </th>
+                                <th> Reserved price </th>
+                                <th> Book state </th>
+                                <th> Auction-ing </th>
+				<th> Join Auction </th>
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
                                         <td> {{detail.book_number}} </td>
                                         <td> {{detail.reserved_price}} </td>
                                         <td> {{detail.state}} </td>
-                                        <td> {{detail.on_going}} </td>
+                                        <td> {{detail.on_going}} </td>					                <td> <a href="../auction/addauction/{{detail.item_id}}" class = "btn btn-primary"> Join Auction </a> </td>
                                 </tr>
                         {% endfor %}
                         </table>

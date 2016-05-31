@@ -21,13 +21,13 @@ def add_item(request):
 			post.user_id = '0000'
 			post.save()
 			edit_form.save_m2m()
-		return HttpResponseRedirect('../')
+		return HttpResponseRedirect('../../../mypage/myitem')
 	else:
 		edit_form = ItemListForm()
 	
 	return render(request, 'auction/additem.html', {'form':edit_form,})
 
-def add_auction(request):
+def add_auction(request, item_id):
         if(request.method == "POST"):
 		edit_form = AuctionListForm(request.POST)
                 if edit_form.is_valid():
@@ -38,7 +38,7 @@ def add_auction(request):
 			post.bidding_state = False
 			post.save()
 			edit_form.save_m2m()
-		return HttpResponseRedirect('../')
+		return HttpResponseRedirect('../../')
         else:
 		edit_form = AuctionListForm()
 

@@ -18,9 +18,13 @@
 	<section>
 		<div class="container">
 			<a href="itemadd" class = "btn btn-primary">Add Item!</a>
-			<a href="auctionadd" class = "btn btn-primary">Add Auction!</a>
 		</div>
 	</section>
+        <section>
+                <div class = "container">
+                        <a href="../mypage/myitem" class = "btn btn-primary">My page</a>
+                </div>
+        </section>
 	<section>
 		<div class = "container">
 			<table class = "table">
@@ -29,6 +33,7 @@
 				<th> current price </th>
 				<th> due date </th>
 				<th> bidding state </th>
+				<th> BIDDING </th>
 			</tr>
 			{% for detail in list_detail %}
 				<tr>
@@ -36,6 +41,7 @@
 					<td> {{detail.current_price}} </td>
 					<td> {{detail.due_date}} </td>
 					<td> {{detail.bidding_state}} </td>
+					<td> <a href="../bidding/{{detail.auction_id}}" class = "btn btn-primary">BIDDING NOW! </a> </td>
 				</tr>
 			{% endfor %}
 			</table>

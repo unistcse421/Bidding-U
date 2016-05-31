@@ -24,11 +24,20 @@
 	</section>
         <section>
                 <div class = "container">
+                        <table class = "table">
+                        <tr>
+                                <th> auction id </th>
+                                <th> suggest price </th>
+                                <th> suggest time </th>
+                        </tr>
                         {% for detail in list_detail %}
-                                <h3> 
-                                        <p> {{detail.auction_id}}  {{detail.suggest_price}} {{detail.suggest_time}} </p>
-                                </h3>
+                                <tr>
+                                        <td> {{detail.auction_id}} </td>
+                                        <td> {{detail.suggest_price}} </td>
+                                        <td> {{detail.suggest_time}} </td>
+                                </tr>
                         {% endfor %}
+                        </table>
                 </div>
         </section>
 

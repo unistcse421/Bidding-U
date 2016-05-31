@@ -24,11 +24,22 @@
 	</section>
         <section>
                 <div class = "container">
+                        <table class = "table">
+                        <tr>
+                                <th> book number </th>
+                                <th> reserved price </th>
+                                <th> book state </th>
+                                <th> auction-ing </th>
+                        </tr>
                         {% for detail in list_detail %}
-                                <h3> 
-                                        <p> {{detail.book_number}}  {{detail.reserved_price}} {{detail.state}} {{detail.on_going}}  </p>
-                                </h3>
+                                <tr>
+                                        <td> {{detail.book_number}} </td>
+                                        <td> {{detail.reserved_price}} </td>
+                                        <td> {{detail.state}} </td>
+                                        <td> {{detail.on_going}} </td>
+                                </tr>
                         {% endfor %}
+                        </table>
                 </div>
         </section>
 

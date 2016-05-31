@@ -1,5 +1,7 @@
 {% extends "site_base.html" %}
 
+
+
 {% load i18n %}
 
 {% block head_title %}Auction list{% endblock %}
@@ -21,11 +23,22 @@
 	</section>
 	<section>
 		<div class = "container">
+			<table class = "table">
+			<tr>
+				<th> book id </th>
+				<th> current price </th>
+				<th> due date </th>
+				<th> bidding state </th>
+			</tr>
 			{% for detail in list_detail %}
-				<h3> 
-					<p> {{detail.book_id}}  {{detail.current_price}} {{detail.due_date}}  {{detail.bidding_state}} </p>
-				</h3>
+				<tr>
+					<td> {{detail.book_id}} </td>
+					<td> {{detail.current_price}} </td>
+					<td> {{detail.due_date}} </td>
+					<td> {{detail.bidding_state}} </td>
+				</tr>
 			{% endfor %}
+			</table>
 		</div>
 	</section>
 

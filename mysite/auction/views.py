@@ -6,7 +6,7 @@ from auction.forms import ItemListForm, AuctionListForm
 from django.template import RequestContext
 
 def auction(request):
-        all_entries = auction_list.objects.all().reverse()
+        all_entries = auction_list.objects.all().order_by('due_date').reverse()
 	data = {
 		"ongoing_detail" : all_entries.filter(bidding_state = True),
 		"finish_detail" : all_entries.filter(bidding_state = False)

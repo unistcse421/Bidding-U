@@ -5,7 +5,6 @@ from auction.models import auction_list, success_auction
 from bidding.models import candidate_list
 from django.template import RequestContext
 
-
 # Create your views here.
 
 def myitem(request):

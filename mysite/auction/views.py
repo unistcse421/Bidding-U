@@ -6,7 +6,7 @@ from auction.forms import ItemListForm, AuctionListForm
 from django.template import RequestContext
 
 def auction(request):
-        all_entries = auction_list.objects.all()
+        all_entries = auction_list.objects.all().reverse()
 	data = {
 		"list_detail" : all_entries
 	}	

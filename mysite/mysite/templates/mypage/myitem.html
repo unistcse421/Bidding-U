@@ -45,7 +45,11 @@
                                         <td> {{detail.reserved_price}} </td>
                                         <td> {{detail.state}} </td>
                                         <td> {{detail.on_going}} </td>	  
-					<td> <a href="../auction/addauction/{{detail.item_id}}" class = "btn btn-primary"> Join Auction </a> </td>
+					{% if detail.on_going %}
+						<td></td>
+					{% else %}	
+						<td> <a href="../auction/addauction/{{detail.item_id}}" class = "btn btn-primary"> Join Auction </a> </td>
+					{% endif %}
                                 </tr>
                         {% endfor %}
                         </table>

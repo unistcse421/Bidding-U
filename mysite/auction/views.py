@@ -8,9 +8,10 @@ from django.template import RequestContext
 def auction(request):
         all_entries = auction_list.objects.all().reverse()
 	data = {
-		"list_detail" : all_entries
+		"ongoing_detail" : all_entries.filter(bidding_state = True),
+		"finish_detail" : all_entries.filter(bidding_state = False)
 	}	
-	print data
+	
 	return render_to_response('auction/main.html', data, context_instance = RequestContext(request))
 
 def add_item(request):

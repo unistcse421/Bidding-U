@@ -35,17 +35,22 @@
 				<th> due date </th>
 				<th> BIDDING </th>
 			</tr>
-			{% for detail in list_detail %}
-				<tr>
+			{% for detail in ongoing_detail %}
+				<tr>	
 					<td> {{detail.item_id}} </td>
 					<td> {{detail.book_id}} </td>
 					<td> {{detail.current_price}} </td>
 					<td> {{detail.due_date}} </td>
-					{% if detail.bidding_state %}
-						<td> <a href="../bidding/{{detail.auction_id}}" class = "btn btn-primary">BIDDING NOW! </a> </td>
-					{% else %}
-						<td> Finished </td>
-					{% endif %}
+					<td> <a href="../bidding/{{detail.auction_id}}" class = "btn btn-primary">BIDDING NOW! </a> </td>
+				</tr>
+			{% endfor %}
+                       	{% for detail in finish_detail %}
+				<tr>
+                                        <td> {{detail.item_id}} </td>
+                                        <td> {{detail.book_id}} </td>
+                                        <td> {{detail.current_price}} </td>
+                                        <td> {{detail.due_date}} </td>
+					<td> Finished </td>
 				</tr>
 			{% endfor %}
 			</table>

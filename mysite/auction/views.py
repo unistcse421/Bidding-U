@@ -40,7 +40,7 @@ def add_auction(request, item_id):
 			post.current_price = item_entries.reserved_price
 			post.book_id = item_entries.book_number
 			post.save()
-			item_entries.on_going = True
+			item_entries.on_going = 1
 			item_entries.save()
 			edit_form.save_m2m()
 		return HttpResponseRedirect('../../')

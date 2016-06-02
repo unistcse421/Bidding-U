@@ -35,7 +35,6 @@
                                 <th> Book number </th>
                                 <th> Reserved price </th>
                                 <th> Book state </th>
-                                <th> Auction-ing </th>
 				<th> Join Auction </th>
                         </tr>
                         {% for detail in list_detail %}
@@ -44,9 +43,10 @@
                                         <td> {{detail.book_number}} </td>
                                         <td> {{detail.reserved_price}} </td>
                                         <td> {{detail.state}} </td>
-                                        <td> {{detail.on_going}} </td>	  
-					{% if detail.on_going %}
-						<td></td>
+					{% if detail.on_going = 1 %}
+						<td>On going</td>
+					{% elif detail.on_going = 2 %}
+						<td>Sold out</td>
 					{% else %}	
 						<td> <a href="../auction/addauction/{{detail.item_id}}" class = "btn btn-primary"> Join Auction </a> </td>
 					{% endif %}

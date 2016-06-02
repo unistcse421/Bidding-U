@@ -1,6 +1,7 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from auction.models import auction_list
+from mypage.models import item_information
 from auction.forms import ItemListForm, AuctionListForm
 from django.template import RequestContext
 
@@ -11,7 +12,6 @@ def auction(request):
 	}	
 	print data
 	return render_to_response('auction/main.html', data, context_instance = RequestContext(request))
-#	return render(request, 'auction/main.html', {})
 
 def add_item(request):
 	if(request.method == "POST"):
@@ -30,13 +30,18 @@ def add_item(request):
 def add_auction(request, item_id):
         if(request.method == "POST"):
 		edit_form = AuctionListForm(request.POST)
-                if edit_form.is_valid():
+		item_entries = item_information.objects.get(item_id = item_id)
+       		data = {
+			"list_detail" : item_entries
+		} 
+		if edit_form.is_valid():
                         post = edit_form.save(commit=False)                     
-			post.item_id ='22'
-			post.current_price = '33'
-			post.book_id = '11'
-			post.bidding_state = False
+			post.item_id = item_id
+			post.current_price = item_entries.reserved_price
+			post.book_id = item_entries.book_number
 			post.save()
+			item_entries.on_going = True
+			item_entries.save()
 			edit_form.save_m2m()
 		return HttpResponseRedirect('../../')
         else:

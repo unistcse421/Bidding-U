@@ -10,7 +10,13 @@
 			{% include "_messages.html" %}
 			<h1>{% blocktrans %} Bidding {% endblocktrans %} </h1>
 		</div>
-	</section>	
+	</section>
+	<section>
+		<div class = "container">
+			<h3> name : {{item_detail.item_id}} </h3>
+			<h3> current price : {{item_detail.current_price}} </h3>
+		</div>
+	</section>
         <section>
                 <div class = "container">
                         <a href="../" class = "btn btn-primary">I don' want bidding</a>

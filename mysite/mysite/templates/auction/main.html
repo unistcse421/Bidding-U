@@ -29,6 +29,7 @@
 		<div class = "container">
 			<table class = "table">
 			<tr>
+				<th> item id </th>
 				<th> book id </th>
 				<th> current price </th>
 				<th> due date </th>
@@ -37,6 +38,7 @@
 			</tr>
 			{% for detail in list_detail %}
 				<tr>
+					<td> {{detail.item_id}} </td>
 					<td> {{detail.book_id}} </td>
 					<td> {{detail.current_price}} </td>
 					<td> {{detail.due_date}} </td>

@@ -31,6 +31,7 @@
                 <div class = "container">
                         <table class = "table">
                         <tr>
+				<th> item_id </th>
                                 <th> Book number </th>
                                 <th> Reserved price </th>
                                 <th> Book state </th>
@@ -39,10 +40,12 @@
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
+					<td> {{detail.item_id}} </td>
                                         <td> {{detail.book_number}} </td>
                                         <td> {{detail.reserved_price}} </td>
                                         <td> {{detail.state}} </td>
-                                        <td> {{detail.on_going}} </td>					                <td> <a href="../auction/addauction/{{detail.item_id}}" class = "btn btn-primary"> Join Auction </a> </td>
+                                        <td> {{detail.on_going}} </td>	  
+					<td> <a href="../auction/addauction/{{detail.item_id}}" class = "btn btn-primary"> Join Auction </a> </td>
                                 </tr>
                         {% endfor %}
                         </table>

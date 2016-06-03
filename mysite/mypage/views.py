@@ -21,8 +21,10 @@ def myitem(request):
 def mybidding(request):
 	current_user = request.user
         all_entries = candidate_list.objects.filter(user_id=current_user.id)
+        seller = user_profile.objects.all()
         data = {
-                "list_detail" : all_entries
+                "list_detail" : all_entries,
+		"seller_info" : seller,
         }
         print data
         return render_to_response('mypage/mybidding.html', data, context_instance = RequestContext(request))
@@ -30,9 +32,13 @@ def mybidding(request):
 
 def winbidding(request):
 	current_user = request.user
+#       seller = user_profile.objects.get(userid = current_user.id)
         all_entries = success_auction.objects.filter(user_id=current_user.id)
+#	buyer = user_profile.objects.filter(userid = all_entries.id)
         data = {
-                "list_detail" : all_entries
+                "list_detail" : all_entries,
+#		"seller_info" : seller,
+	#	"buyer_info" : buyer,
         }
         print data
         return render_to_response('mypage/winbidding.html', data, context_instance = RequestContext(request))

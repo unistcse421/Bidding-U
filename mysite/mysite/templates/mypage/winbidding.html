@@ -31,12 +31,14 @@
                 <div class = "container">
                         <table class = "table">
                         <tr>
+				<th> seller </th>
                                 <th> auction id </th>
                                 <th> item id </th>
                                 <th> price </th>
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
+					<td> {{seller_info.username}} </td>
                                         <td> {{detail.auction_id}} </td>
                                         <td> {{detail.item_id}} </td>
                                         <td> {{detail.price}} </td>

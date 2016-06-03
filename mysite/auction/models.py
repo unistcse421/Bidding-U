@@ -24,4 +24,4 @@ class success_auction(models.Model):
 	user_id = models.IntegerField(default=0)
 	item_id = models.IntegerField(default=0)
 	price = models.IntegerField(default=0)
-
+	winner_id = models.IntegerField(default=0)

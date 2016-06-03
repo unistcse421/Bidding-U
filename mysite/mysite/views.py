@@ -1,7 +1,7 @@
 import account.views
 import mysite.forms
 from mysite.models import user_profile
-
+from django.contrib.auth.models import AbstractBaseUser, UserManager
 
 class SignupView(account.views.SignupView):
 
@@ -12,6 +12,9 @@ class SignupView(account.views.SignupView):
 		super(SignupView, self).after_signup(form)
 
 	def create_profile(self, form):	
-		user_profile.objects.creat(
-			user = self.created_user,		
-		)
+		profile = self.created_user.profile
+		profile.save()
+
+	#	user_profile.objects.creat(
+	#		user = self.created_user,		
+	#	)

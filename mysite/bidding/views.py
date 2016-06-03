@@ -24,7 +24,7 @@ def add_bidding(request, auction_id):
 			        return render_to_response('bidding/add_bidding.html', {'error':'Higer than current price', 'data':entry,'form':edit_form,}, context_instance = RequestContext(request))
 
 			else:
-                        	post.user_id = '0000'
+                        	post.user_id = request.user.id
                         	post.auction_id = auction_id
                         	post.save()
 				entry.current_price = post.suggest_price

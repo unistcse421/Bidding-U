@@ -13,6 +13,5 @@ class SignupView(account.views.SignupView):
 
 	def create_profile(self, form):	
 		user_profile.objects.creat(
-			user = self.created_user,
-			
+			user = self.created_user,		
 		)

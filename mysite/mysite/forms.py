@@ -5,4 +5,5 @@ import account.forms
 
 
 class SignupForm(account.forms.SignupForm):
+	userid = forms.IntegerField()
 	phone = forms.IntegerField()

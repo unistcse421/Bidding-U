@@ -19,7 +19,7 @@ def add_item(request):
 		edit_form = ItemListForm(request.POST)
 		if edit_form.is_valid():
 			post = edit_form.save(commit=False)
-			post.user_id = '0000'
+			post.user_id = request.user.id
 			post.save()
 			edit_form.save_m2m()
 		return HttpResponseRedirect('../../../mypage/myitem')

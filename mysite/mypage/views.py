@@ -4,11 +4,13 @@ from mypage.models import item_information
 from auction.models import auction_list, success_auction
 from bidding.models import candidate_list
 from django.template import RequestContext
+from mysite.models import user_profile
 
 # Create your views here.
 
 def myitem(request):
-        all_entries = item_information.objects.all()
+	current_user = request.user
+        all_entries = item_information.objects.filter(user_id=current_user.id)
         data = {
                 "list_detail" : all_entries
         }
@@ -17,7 +19,8 @@ def myitem(request):
 
 
 def mybidding(request):
-        all_entries = candidate_list.objects.all()
+	current_user = request.user
+        all_entries = candidate_list.objects.filter(user_id=current_user.id)
         data = {
                 "list_detail" : all_entries
         }
@@ -26,7 +29,8 @@ def mybidding(request):
 
 
 def winbidding(request):
-        all_entries = success_auction.objects.all()
+	current_user = request.user
+        all_entries = success_auction.objects.filter(user_id=current_user.id)
         data = {
                 "list_detail" : all_entries
         }

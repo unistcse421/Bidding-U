@@ -1,10 +1,17 @@
 from django.dispatch import receiver
-
+from django.db.models.signals import post_save
+from django.contrib.auth.models import User
+from mysite.models import user_profile
 from account.signals import password_changed
 from account.signals import user_sign_up_attempt, user_signed_up
 from account.signals import user_login_attempt, user_logged_in
 
 from pinax.eventlog.models import log
+
+@receiver(post_save, sender=User)
+def handle_user_sage(sender, instance, created, **kwargs):
+	if created:
+		user_profile.objects.create(user=instance)
 
 
 @receiver(user_logged_in)

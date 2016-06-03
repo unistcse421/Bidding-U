@@ -2,16 +2,25 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from bidding.models import candidate_list
 from auction.models import auction_list
+from mypage.models import item_information
 from bidding.forms import CandidateListForm
 from django.template import RequestContext
+from mysite.models import user_profile
 
 def bidding_list(request, auction_id):
+	auction = auction_list.objects.get(auction_id = auction_id)
+	item = item_information.objects.get(item_id = auction.item_id)
+
 	entries = candidate_list.objects.filter(auction_id = auction_id).order_by('suggest_time').reverse()
+
 	data = {
-		"list_detail" : entries
+		"list_detail" : entries,
+		"auction_info" : auction,
+		"item_info" : item
 	}
 	print data
         return render_to_response('bidding/bidding_list.html', data, context_instance = RequestContext(request))
+
 
 def add_bidding(request, auction_id):
 	entry = auction_list.objects.get(auction_id = auction_id)

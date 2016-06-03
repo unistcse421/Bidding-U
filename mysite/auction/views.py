@@ -1,17 +1,20 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
-from auction.models import auction_list
+from auction.models import auction_list, success_auction
 from mypage.models import item_information
 from auction.forms import ItemListForm, AuctionListForm
 from django.template import RequestContext
+import datetime
 
 def auction(request):
+	close_auction(request)
+
         all_entries = auction_list.objects.all().order_by('due_date').reverse()
 	data = {
 		"ongoing_detail" : all_entries.filter(bidding_state = True),
 		"finish_detail" : all_entries.filter(bidding_state = False)
 	}	
-	
+
 	return render_to_response('auction/main.html', data, context_instance = RequestContext(request))
 
 def add_item(request):
@@ -31,24 +34,32 @@ def add_item(request):
 def add_auction(request, item_id):
         if(request.method == "POST"):
 		edit_form = AuctionListForm(request.POST)
-		item_entries = item_information.objects.get(item_id = item_id)
+		item_entry = item_information.objects.get(item_id = item_id)
        		data = {
 			"list_detail" : item_entries
 		} 
 		if edit_form.is_valid():
                         post = edit_form.save(commit=False)                     
 			post.item_id = item_id
-			post.current_price = item_entries.reserved_price
-			post.book_id = item_entries.book_number
+			post.current_price = item_entry.reserved_price
+			post.book_id = item_entry.book_number
 			post.save()
-			item_entries.on_going = 1
-			item_entries.save()
+			item_entry.on_going = 1
+			item_entry.save()
 			edit_form.save_m2m()
 		return HttpResponseRedirect('../../')
         else:
 		edit_form = AuctionListForm()
 
 	return render(request, 'auction/addauction.html', {'form':edit_form,})
+
+def close_auction(request):
+	now = datetime.datetime.now()
+	entries = auction_list.objects.all()
+#	past = entries.filter(due_date <= now)
+#	past.bidding_state = False
+#	win_entries = success_auction.objects.all()
+#	win_entry = success_auction.objects.create('auction_id')
 
 
 def search(request):

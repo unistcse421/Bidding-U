@@ -20,7 +20,7 @@ class AuctionListForm(forms.ModelForm):
 class SuccessAutionForm(forms.ModelForm):
 	class Meta:
 		model = success_auction
-		fields = ('user_id', 'item_id', 'price',)
+		fields = ('user_id', 'item_id', 'price', 'winner_id',)
 
 class SearchForm(forms.Form):
 	query = forms.CharField(

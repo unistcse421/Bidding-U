@@ -4,11 +4,11 @@ from auction.models import auction_list, success_auction
 from mypage.models import item_information
 from auction.forms import ItemListForm, AuctionListForm
 from django.template import RequestContext
+from mysite.models import user_profile
 import datetime
 
 def auction(request):
 	close_auction(request)
-
         all_entries = auction_list.objects.all().order_by('due_date')
 	data = {
 		"ongoing_detail" : all_entries.filter(bidding_state = True),
@@ -55,12 +55,20 @@ def add_auction(request, item_id):
 
 def close_auction(request):
 	now = datetime.datetime.now()
-	entries = auction_list.objects.all()
-#	past = entries.filter(due_date <= now)
-#	past.bidding_state = False
-#	win_entries = success_auction.objects.all()
-#	win_entry = success_auction.objects.create('auction_id')
+	past_entries = auction_list.objects.filter(due_date__lte = now)
+#	users = user_profile.objects.all()
+#	winner = users.get(user_id = past.expected_winner)
+#	past.save()
 
+	for past in past_entries:
+		if(past.bidding_state == True):
+			past.bidding_state = False
+			past.save()
+			item = item_information.objects.get(item_id = past.item_id)
+			seller = user_profile.objects.get(id = item.user_id)
+			win = success_auction.objects.create(item_id = past.item_id, user_id = seller.user_id, price = past.current_price, winner_id = past.expected_winner)
+##		win.save(force_insert = True)
+		
 
 def search(request):
 	auction_list.objects

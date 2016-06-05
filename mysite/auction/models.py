@@ -18,6 +18,7 @@ class auction_list(models.Model):
 	current_price = models.IntegerField(default=0)
 	book_id =  models.IntegerField(default=0)
 	bidding_state = models.BooleanField(default=True)
+	expected_winner = models.IntegerField(default = 0)
 
 class success_auction(models.Model):
 	auction_id = models.AutoField(primary_key=True)

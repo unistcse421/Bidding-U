@@ -24,7 +24,6 @@
 		<div class = "container">
 			<table class = "table">
 			<tr>
-				<th> item id </th>
 				<th> book id </th>
 				<th> current price </th>
 				<th> due date </th>
@@ -32,7 +31,6 @@
 			</tr>
 			{% for detail in ongoing_detail %}
 				<tr>	
-					<td> {{detail.item_id}} </td>
 					<td> {{detail.book_id}} </td>
 					<td> {{detail.current_price}} </td>
 					<td> {{detail.due_date}} </td>
@@ -41,11 +39,11 @@
 			{% endfor %}
                        	{% for detail in finish_detail %}
 				<tr>
-                                        <td> {{detail.item_id}} </td>
                                         <td> {{detail.book_id}} </td>
                                         <td> {{detail.current_price}} </td>
                                         <td> {{detail.due_date}} </td>
 					<td> Finished </td>
+
 				</tr>
 			{% endfor %}
 			</table>

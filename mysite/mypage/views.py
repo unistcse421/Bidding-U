@@ -32,7 +32,8 @@ def mybidding(request):
 
 def winbidding(request):
 	current_user = request.user
-#       seller = user_profile.objects.get(userid = current_user.id)
+
+#	seller = user_profile.objects.get(id = current_user.id)
         all_entries = success_auction.objects.filter(user_id=current_user.id)
 #	buyer = user_profile.objects.filter(userid = all_entries.id)
         data = {

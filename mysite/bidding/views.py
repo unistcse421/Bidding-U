@@ -17,10 +17,16 @@ def bidding_list(request, auction_id):
 	data = {
 		"list_detail" : entries,
 		"auction_info" : auction,
-		"item_info" : item
+		"item_info" : item,
 	}
-	print data
-        return render_to_response('bidding/bidding_list.html', data, context_instance = RequestContext(request))
+
+	if(auction.bidding_state == False):
+        	return render_to_response('bidding/bidding_list_finished.html',data, context_instance = RequestContext(request))
+	else:
+		if(request.user.id == item.user_id):
+        		return render_to_response('bidding/bidding_list_my.html',data, context_instance = RequestContext(request))
+		else:
+        		return render_to_response('bidding/bidding_list.html', data, context_instance = RequestContext(request))
 
 
 def add_bidding(request, auction_id):

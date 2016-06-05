@@ -42,8 +42,7 @@
                                         <td> {{detail.book_id}} </td>
                                         <td> {{detail.current_price}} </td>
                                         <td> {{detail.due_date}} </td>
-					<td> Finished </td>
-
+                                        <td> <a href="../bidding/{{detail.auction_id}}" class = "btn btn-primary"> FINISHED </a> </td>
 				</tr>
 			{% endfor %}
 			</table>

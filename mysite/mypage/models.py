@@ -9,7 +9,6 @@ class item_information(models.Model):
                 ('A', 'A'),
                 ('B', 'B'),
                 ('C', 'C'),
-                ('D', 'D'),
         )
 	
 	item_id = models.AutoField(primary_key=True)

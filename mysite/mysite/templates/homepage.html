@@ -19,8 +19,12 @@ body {background-image: url('http://bestanimations.com/Books/book-are-my-life-an
             {% if not user.is_authenticated %}
             {% url "account_login" as login_url %}
             {% url "account_signup" as signup_url %}
-            <p>{% blocktrans %}You can <a href="{{ login_url }}" class="myButton">Log In</a> or <a href="{{ signup_url }}" class="myButton">Sign Up</a> to try out the site.{% endblocktrans %}</p>
+            <p>{% blocktrans %}You can <a href="{{ login_url }}" class="homeButton">Log In</a> or <a href="{{ signup_url }}" class="homeButton">Sign Up</a> to try out the site.{% endblocktrans %}</p>
             {% endif %}
+
+	<div class = "container">
+                        <a class = "homeButton" href="auction">Go to Auction list</a>
+	</div>
         </div>
     </section>
 
@@ -32,7 +36,6 @@ body {background-image: url('http://bestanimations.com/Books/book-are-my-life-an
                 <b>Bidding-U</b> is the platform for students who want to sell their books via bidding(auction) system. They can select the lowe		st price, due date, and etc. It will offer candidates who can bidding on your books, information about used-books price and grea		t place to buy certain used-books which will be needed for your semester.
                 {% endblocktrans %}
             </p>
-			<a class = "myButton" href="auction">Go to Auction list</a>
 	    <div class="feature-columns">
                 <div>
                     <i class="fa fa-cubes fa-3x"></i><br>

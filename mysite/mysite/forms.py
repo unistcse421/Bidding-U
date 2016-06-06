@@ -6,5 +6,6 @@ import account.forms
 class SignupForm(account.forms.SignupForm):
 		userid = forms.IntegerField()
 		phone = forms.IntegerField()
+#		username = forms.CharField()
 #		model = user_profile
 #		fileds = ('userid', 'phone', )

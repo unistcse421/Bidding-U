@@ -72,7 +72,7 @@ def close_auction(request):
 			item = item_information.objects.get(item_id = past.item_id)
 			
 			seller = user_profile.objects.get(id = item.user_id)
-			win = success_auction.objects.create(item_id = past.item_id, user_id = seller.user_id, price = past.current_price, winner_id = past.expected_winner)
+			win = success_auction.objects.create(item_id = past.item_id, user_id = past.user_id, price = past.current_price, winner_id = past.expected_winner)
 			win.save(force_insert = True)
 	
 

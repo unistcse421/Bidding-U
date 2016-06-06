@@ -1,0 +1,106 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}Bidding-U{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block body_base %}
+    <section class="jumbotron">
+        <div class="container">
+            {% include "_messages.html" %}
+            <h1>{% blocktrans %}Welcome to<br>Bidding-U{% endblocktrans %}</h1>
+            <p>
+                {% blocktrans %}
+                Sell your books in reasonable price! 
+                {% endblocktrans %}
+            </p>
+            {% if not user.is_authenticated %}
+            {% url "account_login" as login_url %}
+            {% url "account_signup" as signup_url %}
+            <p>{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-default">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="text-center">{% blocktrans %}What is Bidding-U?{% endblocktrans %}</h2>
+            <p class="lead">
+                {% blocktrans %}
+                <b>Bidding-U</b> is the platform for students who want to sell their books via bidding(auction) system. They can select the lowe		st price, due date, and etc. It will offer candidates who can bidding on your books, information about used-books price and grea		t place to buy certain used-books which will be needed for your semester.
+                {% endblocktrans %}
+            </p>
+            	<a href="auction" class = "button">Go to Auction list</a>
+            <div class="feature-columns">
+                <div>
+                    <i class="fa fa-cubes fa-3x"></i><br>
+                    {% blocktrans %}
+                    <b>Lee, Jin Won</b> jwl1993@unist.ac.kr
+                    {% endblocktrans %}
+                </div>
+                <div>
+                    <i class="fa fa-puzzle-piece fa-3x"></i><br>
+                    {% blocktrans %}
+                    <b>Oh, Ju Young</b> ojmme625@gmail.com
+                    {% endblocktrans %}
+                </div>
+                <div>
+                    <i class="fa fa-tint fa-3x"></i><br>
+                    {% blocktrans %}
+                    <b>Lee, Kang Keun</b> kangkeun@unist.ac.kr
+                    {% endblocktrans %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+.button {
+   display: block;
+   border: 1px solid #95bd13;
+   background: #e6e61c;
+   background: -webkit-gradient(linear, left top, left bottom, from(#d0e817), to(#e6e61c));
+   background: -webkit-linear-gradient(top, #d0e817, #e6e61c);
+   background: -moz-linear-gradient(top, #d0e817, #e6e61c);
+   background: -ms-linear-gradient(top, #d0e817, #e6e61c);
+   background: -o-linear-gradient(top, #d0e817, #e6e61c);
+   background-image: -ms-linear-gradient(top, #d0e817 0%, #e6e61c 100%);
+   padding: 13px 26px;
+   -webkit-border-radius: 13px;
+   -moz-border-radius: 13px;
+   border-radius: 13px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #f2f200 0 1px 0;
+   color: #040500;
+   font-size: 17px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border: 1px solid #857a02;
+   text-shadow: #f0f009 0 1px 0;
+   background: #b2c236;
+   background: -webkit-gradient(linear, left top, left bottom, from(#f0f2ce), to(#b2c236));
+   background: -webkit-linear-gradient(top, #f0f2ce, #b2c236);
+   background: -moz-linear-gradient(top, #f0f2ce, #b2c236);
+   background: -ms-linear-gradient(top, #f0f2ce, #b2c236);
+   background: -o-linear-gradient(top, #f0f2ce, #b2c236);
+   background-image: -ms-linear-gradient(top, #f0f2ce 0%, #b2c236 100%);
+   color: #ffffff;
+   }
+.button:active {
+   text-shadow: #c5f018 0 1px 0;
+   border: 1px solid #000000;
+   background: #e1ebb7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#cdeb6a), to(#b2c236));
+   background: -webkit-linear-gradient(top, #cdeb6a, #e1ebb7);
+   background: -moz-linear-gradient(top, #cdeb6a, #e1ebb7);
+   background: -ms-linear-gradient(top, #cdeb6a, #e1ebb7);
+   background: -o-linear-gradient(top, #cdeb6a, #e1ebb7);
+   background-image: -ms-linear-gradient(top, #cdeb6a 0%, #e1ebb7 100%);
+   color: #ffffff;
+   }

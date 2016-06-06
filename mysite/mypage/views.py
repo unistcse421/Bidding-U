@@ -11,7 +11,6 @@ from django.contrib.auth.models import User
 
 def myitem(request):
 	current_user = request.user.id
-#	user = user_profile.objects.get(id = current_user)
         all_entries = item_information.objects.filter(user_id=current_user)
         data = {
                 "list_detail" : all_entries
@@ -23,7 +22,6 @@ def myitem(request):
 def mybidding(request):
         current_user = request.user.id
         all_entries = candidate_list.objects.filter(user_id = current_user)
-#        user = User.objects.filter(id = current_user)
         data = {
                 "list_detail" : all_entries,
         }
@@ -33,11 +31,18 @@ def mybidding(request):
 
 def winbidding(request):
         current_user = request.user.id
-	
         buy = success_auction.objects.filter(winner_id = current_user)
 	sell = success_auction.objects.filter(user_id = current_user)
-	seller = User.objects.get(id = 10)
-	buyer = User.objects.get(id = 10)
+	seller = []
+	buyer = []
+
+	for b in buy:
+		seller.append(User.objects.get(id = b.user_id))
+
+	for s in sell:
+		buyer.append(user_profile.objects.get(userid = s.winner_id))
+
+
         data = {
                 "list_detail" : buy,
 		"list_detail2" : sell,

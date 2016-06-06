@@ -21,7 +21,7 @@ class item_information(models.Model):
 
 class book_list(models.Model):
 	book_id = models.AutoField(primary_key=True)
-
+	department = models.CharField(max_length=200)
 	book_name = models.CharField(max_length=200)
 	author = models.CharField(max_length=20)
 	price = models.IntegerField(default=0)

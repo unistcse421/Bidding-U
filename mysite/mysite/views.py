@@ -16,7 +16,3 @@ class SignupView(account.views.SignupView):
 		profile.userid = form.cleaned_data["userid"]
 		profile.phone = form.cleaned_data["phone"]
 		profile.save()
-
-	#	user_profile.objects.creat(
-	#		user = self.created_user,		
-	#	)

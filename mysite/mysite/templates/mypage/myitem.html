@@ -45,11 +45,11 @@
                                         <td><center> {{detail.reserved_price}} </center></td>
                                         <td><center> {{detail.state}} </center></td>
 					{% if detail.on_going = 1 %}
-                                                <td> <a href="../bidding/{{detail.item_id}}" class = "myButton"> On going </a> </td>
+                                                <td> <center><a href="../bidding/{{detail.item_id}}" class = "myButton"> On going </a> </center></td>
 					{% elif detail.on_going = 2 %}
-                                                <td> <a href="../bidding/{{detail.item_id}}" class = "myButton"> Sold out </a> </td>
+                                                <td> <center><a href="../bidding/{{detail.item_id}}" class = "myButton"> Sold out </a> </center></td>
 					{% else %}	
-						<td> <a href="../auction/addauction/{{detail.item_id}}" class = "myButton"> Join Auction </a> </td>
+						<td> <center> <a href="../auction/addauction/{{detail.item_id}}" class = "myButton"> Join Auction </a> </center> </td>
 					{% endif %}
                                 </tr>
                         {% endfor %}

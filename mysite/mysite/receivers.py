@@ -18,6 +18,8 @@ def handle_user_sage(sender, instance, created, **kwargs):
 def handle_user_logged_in(sender, **kwargs):
     log(
         user=kwargs.get("user"),
+#	userid = kwargs.get("userid"),
+#	phone = kwargs.get("phone"),
         action="USER_LOGGED_IN",
         extra={}
     )
@@ -61,6 +63,8 @@ def handle_user_sign_up_attempt(sender, **kwargs):
 def handle_user_signed_up(sender, **kwargs):
     log(
         user=kwargs.get("user"),
+#	userid = kwargs.get("userid"),
+#	phone = kwargs.get("phone"),
         action="USER_SIGNED_UP",
         extra={}
     )

@@ -31,21 +31,40 @@
                 <div class = "container">
                         <table class = "table">
                         <tr>
-				<th> seller </th>
-                                <th> auction id </th>
-                                <th> item id </th>
-                                <th> price </th>
+				<th> Seller </th>
+				<th> Phone # </th>
+                                <th> Item id </th>
+                                <th> Price </th>
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
 					<td> {{seller_info.username}} </td>
-                                        <td> {{detail.auction_id}} </td>
+                                        <td> {{seller_info.phone}} </td>
                                         <td> {{detail.item_id}} </td>
                                         <td> {{detail.price}} </td>
                                 </tr>
                         {% endfor %}
                         </table>
                 </div>
+                <div class = "container">
+                        <table class = "table">
+                        <tr>
+                                <th> Buyer </th>
+                                <th> Phone # </th>
+                                <th> Item id </th>
+                                <th> Price </th>
+                        </tr>
+                        {% for detail in list_detail2 %}
+                                <tr>
+                                        <td> {{buyer_info.username}} </td>
+                                        <td> {{buyer_info.phone}} </td>
+                                        <td> {{detail.item_id}} </td>
+                                        <td> {{detail.price}} </td>
+                                </tr>
+                        {% endfor %}
+                        </table>
+                </div>
+
         </section>
 
 

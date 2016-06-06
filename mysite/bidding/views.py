@@ -6,18 +6,20 @@ from mypage.models import item_information
 from bidding.forms import CandidateListForm
 from django.template import RequestContext
 from mysite.models import user_profile
+from django.contrib.auth.models import User
 
 def bidding_list(request, auction_id):
+#        user = user_profile.objects.all()
 	auction = auction_list.objects.get(auction_id = auction_id)
 	item = item_information.objects.get(item_id = auction.item_id)
-	#name = user_profile.objects.get(user_id = item.user_id)
-
+	seller = User.objects.get(id = item.user_id)
 	entries = candidate_list.objects.filter(auction_id = auction_id).order_by('suggest_time').reverse()
 
 	data = {
 		"list_detail" : entries,
 		"auction_info" : auction,
 		"item_info" : item,
+		"seller" : seller,
 	}
 
 	if(auction.bidding_state == False):

@@ -18,11 +18,14 @@ def auction(request):
 	return render_to_response('auction/main.html', data, context_instance = RequestContext(request))
 
 def add_item(request):
+        current_user = request.user.id
+#	user = user_profile.objects.get(id = current_user)
+
 	if(request.method == "POST"):
 		edit_form = ItemListForm(request.POST)
 		if edit_form.is_valid():
 			post = edit_form.save(commit=False)
-			post.user_id = request.user.id
+			post.user_id = current_user
 			post.save()
 			edit_form.save_m2m()
 		return HttpResponseRedirect('../../../mypage/myitem')
@@ -59,12 +62,15 @@ def close_auction(request):
 #	users = user_profile.objects.all()
 #	winner = users.get(user_id = past.expected_winner)
 #	past.save()
+#        current_user = request.user.id
+#        user = user_profile.objects.get(id = current_user)
 
 	for past in past_entries:
 		if(past.bidding_state == True):
 			past.bidding_state = False
 			past.save()
 			item = item_information.objects.get(item_id = past.item_id)
+			
 			seller = user_profile.objects.get(id = item.user_id)
 			win = success_auction.objects.create(item_id = past.item_id, user_id = seller.user_id, price = past.current_price, winner_id = past.expected_winner)
 			win.save(force_insert = True)

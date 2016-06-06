@@ -8,10 +8,10 @@ from django.template import RequestContext
 from mysite.models import user_profile
 
 def bidding_list(request, auction_id):
+#        user = user_profile.objects.all()
 	auction = auction_list.objects.get(auction_id = auction_id)
 	item = item_information.objects.get(item_id = auction.item_id)
-	#name = user_profile.objects.get(user_id = item.user_id)
-
+	seller = user_profile.objects.get(id = item.user_id)
 	entries = candidate_list.objects.filter(auction_id = auction_id).order_by('suggest_time').reverse()
 
 	data = {
@@ -44,7 +44,7 @@ def add_bidding(request, auction_id):
                         	post.auction_id = auction_id
                         	post.save()
 				entry.current_price = post.suggest_price
-				entry.expected_winner = request.user.id
+				entry.expected_winner = request.user.userid
 				entry.save()
                         	edit_form.save_m2m()
                 		return HttpResponseRedirect('../')

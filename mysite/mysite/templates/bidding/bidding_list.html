@@ -17,7 +17,7 @@
                 <div class="container">
                         {% include "_messages.html" %}
                         <h2>{% blocktrans %}Information{% endblocktrans %}</h2>
-			<h3>Seller : {{item_info.user_id}}</h3>
+			<h3>Seller : {{user.username}}</h3>
 			<h3>Item : {{item_info.item_id}}</h3>
 			<h3>Original price : {{item_info.reserved_price}}</h3>
 			<h3>Current price : {{auction_info.current_price}}</h3>

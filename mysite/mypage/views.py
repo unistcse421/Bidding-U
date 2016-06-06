@@ -9,8 +9,9 @@ from mysite.models import user_profile
 # Create your views here.
 
 def myitem(request):
-	current_user = request.user
-        all_entries = item_information.objects.filter(user_id=current_user.id)
+	current_user = request.user.id
+#	user = user_profile.objects.get(id = current_user)
+        all_entries = item_information.objects.filter(user_id=current_user)
         data = {
                 "list_detail" : all_entries
         }
@@ -19,8 +20,9 @@ def myitem(request):
 
 
 def mybidding(request):
-	current_user = request.user
-        all_entries = candidate_list.objects.filter(user_id=current_user.id)
+        current_user = request.user.id
+#        user = user_profile.objects.get(id = current_user)
+        all_entries = candidate_list.objects.filter(user_id = current_user)
         seller = user_profile.objects.all()
         data = {
                 "list_detail" : all_entries,
@@ -31,11 +33,10 @@ def mybidding(request):
 
 
 def winbidding(request):
-	current_user = request.user
-
-#	seller = user_profile.objects.get(id = current_user.id)
-        all_entries = success_auction.objects.filter(user_id=current_user.id)
-#	buyer = user_profile.objects.filter(userid = all_entries.id)
+        current_user = request.user.id
+#        seller = user_profile.objects.get(id = current_user)
+        all_entries = success_auction.objects.filter(winner_id = current_user)
+#	buyers = user_profile.objects.filter(userid = all_entries.user_id)
         data = {
                 "list_detail" : all_entries,
 #		"seller_info" : seller,

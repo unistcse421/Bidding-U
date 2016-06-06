@@ -7,6 +7,6 @@ from django import forms
 from bidding.models import candidate_list 
 
 class CandidateListForm(forms.ModelForm):
-	class Met:
+	class Meta:
 		model = candidate_list
-		fileds = ('suggest_price',)
+		fields = ('suggest_price',)

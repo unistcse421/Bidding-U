@@ -12,7 +12,9 @@ class SignupView(account.views.SignupView):
 		super(SignupView, self).after_signup(form)
 
 	def create_profile(self, form):	
-		profile = self.created_user.profile
+		profile = self.created_user.user_profile
+		profile.userid = form.cleaned_data["userid"]
+		profile.phone = form.cleaned_data["phone"]
 		profile.save()
 
 	#	user_profile.objects.creat(

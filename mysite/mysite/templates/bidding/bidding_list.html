@@ -40,13 +40,13 @@
                         <tr>
                                 <th><center> User id </center></th>
                                 <th><center> Suggest price </center></th>
-                                <th><center> suggest time </center></th>
+                                <th><center> Suggest time </center></th>
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
-                                        <td> {{detail.user_id}} </td>
-                                        <td> {{detail.suggest_price}} </td>
-                                        <td> {{detail.suggest_time}} </td>
+                                        <td><center> {{detail.user_id}} </center></td>
+                                        <td><center> {{detail.suggest_price}} </center></td>
+                                        <td><center> {{detail.suggest_time}} </center></td>
                                 </tr>
                         {% endfor %}
                         </table>

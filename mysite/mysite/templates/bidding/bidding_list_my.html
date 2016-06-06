@@ -38,15 +38,15 @@
                 <div class = "container">
                         <table class = "table">
                         <tr>
-                                <th> user id </th>
-                                <th> suggest price </th>
-                                <th> suggest time </th>
+                                <th><center> user id </center></th>
+                                <th><center> suggest price </center></th>
+                                <th><center> suggest time </center></th>
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
-                                        <td> {{detail.user_id}} </td>
-                                        <td> {{detail.suggest_price}} </td>
-                                        <td> {{detail.suggest_time}} </td>
+                                        <td><center> {{detail.user_id}} </center></td>
+                                        <td><center> {{detail.suggest_price}} </center></td>
+                                        <td><center> {{detail.suggest_time}} </center></td>
                                 </tr>
                         {% endfor %}
                         </table>

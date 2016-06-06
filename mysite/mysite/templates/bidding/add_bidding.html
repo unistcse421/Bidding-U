@@ -5,13 +5,13 @@
 {% block head_title %} Add-Bidding {% endblock %}
 
 {% block body_base %}
-	<section class="jumbortrom">
+	<section class="jumbotron">
 		<div class="container">
 			{% include "_messages.html" %}
 			<h1>{% blocktrans %} Bidding {% endblocktrans %} </h1>
 		</div>
 	</section>
-	<section>
+	<section class="jumbotron2">
 		<div class = "container">
 			<h3> name : {{data.item_id}} </h3>
 			<h3> current price : {{data.current_price}} </h3>

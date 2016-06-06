@@ -32,7 +32,6 @@
                 <div class = "container">
                         <table class = "table">
                         <tr>
-				<th><center> Item_id </center></th>
                                 <th><center> Book number </center></th>
                                 <th><center> Reserved price </center></th>
                                 <th><center> Book state </center></th>
@@ -40,7 +39,6 @@
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
-					<td><center> {{detail.item_id}} </center></td>
                                         <td><center> {{detail.book_number}} </center></td>
                                         <td><center> {{detail.reserved_price}} </center></td>
                                         <td><center> {{detail.state}} </center></td>

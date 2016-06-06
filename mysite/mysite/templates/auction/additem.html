@@ -20,13 +20,30 @@
                 </div>
         </section>
 	<section>
+		<div class="feature-columns">
+        
+                        <div class="notice">
+			<br><h1>Guide LIne</h1></br>
+                        <br> A : No notes and Clean cover</br>
+                        <br> B : Some notes or Crumpled cover</br>
+                        <br> C : Many notes or Dirty cover</br>
+                        </div>
+                
 		<div class="container">
 			<form method="POST" class="post-form">
 		                {% csrf_token %}
 		                {{form.as_p}}
-                                <input type="submit" value = ADD! />
+                        <div>  <input type="submit" value = ADD! /></div>
 			</form>
 		</div>
+		
+			<div class="notice">
+			<br><h1> Recommended Price </h1></br>
+			<br> A : 75% of original price<</br>
+			<br> B : 60% of original price</br>
+			<br> C : 45% of original price</br>
+			</div>
+		
 	</section>
 
 {% endblock %}

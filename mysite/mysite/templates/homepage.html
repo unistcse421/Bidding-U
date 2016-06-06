@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block head_title %}pinax-project-account{% endblock %}
+{% block head_title %}Bidding-U{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
@@ -10,13 +10,10 @@
     <section class="jumbotron">
         <div class="container">
             {% include "_messages.html" %}
-            <h1>{% blocktrans %}Welcome to<br>pinax-project-account{% endblocktrans %}</h1>
+            <h1>{% blocktrans %}Welcome to<br>Bidding-U{% endblocktrans %}</h1>
             <p>
                 {% blocktrans %}
-                In addition to what is provided by the "zero" project, this project
-                provides thorough integration with django-user-accounts, adding
-                comprehensive account management functionality. It is a foundation
-                suitable for most sites that have user accounts.
+                Sell your books in reasonable price! 
                 {% endblocktrans %}
             </p>
             {% if not user.is_authenticated %}
@@ -29,53 +26,44 @@
 
     <section>
         <div class="container">
-            <h2 class="text-center">{% blocktrans %}What is Pinax?{% endblocktrans %}</h2>
+            <h2 class="text-center">{% blocktrans %}What is Bidding-U?{% endblocktrans %}</h2>
             <p class="lead">
                 {% blocktrans %}
-                <b>Pinax</b> is an open-source platform based on Django and
-                intended to provide a starting point for websites. It takes
-                care of the things that many sites have in common, so you can
-                focus on what makes your site different.
+                <b>Bidding-U</b> is the platform for students who want to sell their books via bidding(auction) system. They can select the lowe		st price, due date, and etc. It will offer candidates who can bidding on your books, information about used-books price and grea		t place to buy certain used-books which will be needed for your semester.
                 {% endblocktrans %}
             </p>
-            <div class="container">
-            	<a href="auction" class = "btn btn-primary">Back to Auction list</a>
-            </div>
+	    <div class = "button">
+            	<button class="button" id = save" href="auction">Go to Auction list</button>
+		<a href="auction" class = "button">Go to Auction list</a>
+		<input href = "auction" class="button" value = "Go to Auction list" type= "submit" />
+	    </div>	
             <div class="feature-columns">
                 <div>
                     <i class="fa fa-cubes fa-3x"></i><br>
                     {% blocktrans %}
-                    <b>Starter projects</b> provide project layout,
-                    scaffolding, already integrated components and
-                    ready-to-go code.
+                    <b>Lee, Jin Won</b> jwl1993@unist.ac.kr
                     {% endblocktrans %}
                 </div>
                 <div>
                     <i class="fa fa-puzzle-piece fa-3x"></i><br>
                     {% blocktrans %}
-                    <b>Reusable apps</b> provide common
-                    infrastructure, back-end functionality,
-                    and user-facing components.
+                    <b>Oh, Ju Young</b> ojmme625@gmail.com
                     {% endblocktrans %}
                 </div>
                 <div>
                     <i class="fa fa-tint fa-3x"></i><br>
                     {% blocktrans %}
-                    <b>Themes</b> provide default templates and
-                    stylesheets for quick prototyping and easy customization.
+                    <b>Lee, Kang Keun</b> kangkeun@unist.ac.kr
                     {% endblocktrans %}
                 </div>
             </div>
         </div>
     </section>
-    <section>
-        <div class="container">
-            <p class="lead text-center">
-                {% blocktrans %}
-                See <a href="http://pinaxproject.com/">pinaxproject.com</a>
-                for more information.
-                {% endblocktrans %}
-            </p>
-        </div>
-    </section>
 {% endblock %}
+.button {
+ display: block;
+ height: 100px;
+ width: 300px;
+ background: #34696f;
+ border: 2px solid rgba(33, 68, 72, 0.59);
+}

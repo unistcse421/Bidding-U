@@ -16,7 +16,7 @@ class auction_list(models.Model):
 	item_id = models.IntegerField(default=0)
 	due_date = models.DateTimeField(choices=Period)
 	current_price = models.IntegerField(default=0)
-	book_id =  models.IntegerField(default=0)
+	book_name =  models.CharField(max_length=100)
 	bidding_state = models.BooleanField(default=True)
 	expected_winner = models.IntegerField(default = 0)
 

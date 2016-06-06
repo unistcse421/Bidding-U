@@ -32,14 +32,18 @@
                 <div class = "container">
                         <table class = "table">
                         <tr>
-                                <th><center> Book number </center></th>
+                                <th><center> Book name </center></th>
+				<th><center> Author </center></th>
+				<th><center> Edition </center></th>
                                 <th><center> Reserved price </center></th>
                                 <th><center> Book state </center></th>
 				<th><center> Join Auction </center></th>
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
-                                        <td><center> {{detail.book_number}} </center></td>
+                                        <td><center> {{detail.book_name}} </center></td>
+					<td><center> {{detail.author}} </center></td>
+					<td><center> {{detail.edition}} </center></td>
                                         <td><center> {{detail.reserved_price}} </center></td>
                                         <td><center> {{detail.state}} </center></td>
 					{% if detail.on_going = 1 %}

@@ -16,7 +16,9 @@ class item_information(models.Model):
 	user_id = models.IntegerField(default=0)
 	reserved_price = models.IntegerField(default=0)
 	state = models.CharField(max_length=1, choices=State)
-	book_number = models.IntegerField(default=0)
+	book_name = models.CharField(max_length=100)
+	edition = models.IntegerField(default=0)
+	author = models.CharField(max_length=100)
 	on_going = models.BooleanField(default = False)
 
 class book_list(models.Model):

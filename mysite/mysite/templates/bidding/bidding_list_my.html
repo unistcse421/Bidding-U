@@ -19,7 +19,9 @@
                 <div class="container">
                         {% include "_messages.html" %}
                         <center><h2>Seller : {{seller.username}}</h2></center>
-                        <h2>Item : {{item_info.item_id}}</h2>
+                        <h2>Book_name : {{item_info.book_name}}</h2>
+			<h2>Author : {{item_info.author}}</h2>
+			<h2>Edition : {{item_info.edition}}</h2>
                         <h2>Original price : {{item_info.reserved_price}}</h2>
                         <h2>Current price : {{auction_info.current_price}}</h2>
                         <h2>Due date : {{auction_info.due_date}}</h2>

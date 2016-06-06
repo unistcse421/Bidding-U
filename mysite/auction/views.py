@@ -45,7 +45,7 @@ def add_auction(request, item_id):
                         post = edit_form.save(commit=False)                     
 			post.item_id = item_id
 			post.current_price = item_entry.reserved_price
-			post.book_id = item_entry.book_number
+			post.book_name= item_entry.book_name
 			post.save()
 			item_entry.on_going = 1
 			item_entry.save()

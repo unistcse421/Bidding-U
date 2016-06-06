@@ -19,7 +19,7 @@
             {% if not user.is_authenticated %}
             {% url "account_login" as login_url %}
             {% url "account_signup" as signup_url %}
-            <p>{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-default">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
+            <p>{% blocktrans %}You can <a href="{{ login_url }}" class="myButton">Log In</a> or <a href="{{ signup_url }}" class="myButton">Sign Up</a> to try out the site.{% endblocktrans %}</p>
             {% endif %}
         </div>
     </section>
@@ -32,12 +32,8 @@
                 <b>Bidding-U</b> is the platform for students who want to sell their books via bidding(auction) system. They can select the lowe		st price, due date, and etc. It will offer candidates who can bidding on your books, information about used-books price and grea		t place to buy certain used-books which will be needed for your semester.
                 {% endblocktrans %}
             </p>
-	    <div class = "button">
-            	<button class="button" id = save" href="auction">Go to Auction list</button>
-		<a href="auction" class = "button">Go to Auction list</a>
-		<input href = "auction" class="button" value = "Go to Auction list" type= "submit" />
-	    </div>	
-            <div class="feature-columns">
+			<a class = "myButton" href="auction">Go to Auction list</a>
+	    <div class="feature-columns">
                 <div>
                     <i class="fa fa-cubes fa-3x"></i><br>
                     {% blocktrans %}
@@ -60,10 +56,45 @@
         </div>
     </section>
 {% endblock %}
-.button {
- display: block;
- height: 100px;
- width: 300px;
- background: #34696f;
- border: 2px solid rgba(33, 68, 72, 0.59);
+<style>
+.myButton {
+	-moz-box-shadow: 0px 1px 0px 0px #fff6af;
+	-webkit-box-shadow: 0px 1px 0px 0px #fff6af;
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+	background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+	background-color:#ffec64;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
 }
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+	background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+	background-color:#ffab23;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+</style>

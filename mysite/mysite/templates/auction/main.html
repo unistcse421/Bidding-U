@@ -1,6 +1,5 @@
+
 {% extends "site_base.html" %}
-
-
 
 {% load i18n %}
 
@@ -12,7 +11,9 @@
 	<section class="jumbotron">
 		<div class="container">
 			{% include "_messages.html" %}
-			<h1>{% blocktrans %}AUCTION LIST{% endblocktrans %}</h1>
+			<center>
+				<h1><a href="">AUCTION LIST</a></h1>
+			</center>
 		</div>
 	</section>
         <section>
@@ -24,25 +25,25 @@
 		<div class = "container">
 			<table class = "table">
 			<tr>
-				<th> book id </th>
-				<th> current price </th>
-				<th> due date </th>
-				<th> BIDDING </th>
+				<th><center> book id </center></th>
+				<th><center> current price </center></th>
+				<th><center> due date </center></th>
+				<th><center> BIDDING </center></th>
 			</tr>
 			{% for detail in ongoing_detail %}
-				<tr>	
-					<td> {{detail.book_id}} </td>
-					<td> {{detail.current_price}} </td>
-					<td> {{detail.due_date}} </td>
-					<td> <a href="../bidding/{{detail.auction_id}}" class = "myButton">BIDDING NOW! </a> </td>
+				<tr>
+					<td><center> {{detail.book_id}} </center></td>
+					<td><center>{{detail.current_price}} </center></td>
+					<td><center> {{detail.due_date}} </center></td>
+					<td><center> <a href="../bidding/{{detail.auction_id}}" class = "myButton">BIDDING NOW! </a> </center></td>
 				</tr>
 			{% endfor %}
                        	{% for detail in finish_detail %}
 				<tr>
-                                        <td> {{detail.book_id}} </td>
-                                        <td> {{detail.current_price}} </td>
-                                        <td> {{detail.due_date}} </td>
-                                        <td> <a href="../bidding/{{detail.auction_id}}" class = "myButton"> FINISHED </a> </td>
+                                        <td><center> {{detail.book_id}}</center></td>
+                                        <td><center> {{detail.current_price}} </center></td>
+                                        <td><center> {{detail.due_date}}</center> </td>
+                                        <td><center> <a href="../bidding/{{detail.auction_id}}" class = "myButton"> FINISHED </a></center> </td>
 				</tr>
 			{% endfor %}
 			</table>

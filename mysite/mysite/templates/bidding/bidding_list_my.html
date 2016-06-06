@@ -14,13 +14,19 @@
                 </div>
         </section>
         <section class="jumbotron2">
+                <div class="feature-columns">
+                <div></div>
                 <div class="container">
                         {% include "_messages.html" %}
-			<h2>Seller : {{seller.username}}</h2>
-			<h2>Item : {{item_info.item_id}}</h2>
-			<h2>Original price : {{item_info.reserved_price}}</h2>
-			<h2>Current price : {{auction_info.current_price}}</h2>
-			<h2>Due date : {{auction_info.due_date}}</h2>
+                        <center><h2>Seller : {{seller.username}}</h2></center>
+                        <h2>Item : {{item_info.item_id}}</h2>
+                        <h2>Original price : {{item_info.reserved_price}}</h2>
+                        <h2>Current price : {{auction_info.current_price}}</h2>
+                        <h2>Due date : {{auction_info.due_date}}</h2>
+                </div>
+                <div class="container">
+                        <a href="addbidding" class = "biddingButton">BIDDING</a>
+                </div>
                 </div>
         </section>
         <section>
@@ -30,7 +36,8 @@
 	</section>
 	<section>
                 <div class="container">
-                        <a href="../../auction" class = "myButton">Back to Auction list</a>
+                       <center><a href="../../auction" class = "myButton">Back to Auction list</a></center>
+
                 </div>
         </section>
         <section>

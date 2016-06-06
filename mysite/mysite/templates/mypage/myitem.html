@@ -16,16 +16,16 @@
 	</section>
 	<section>
 		<div class="container">
-                        <a href="myitem" class = "btn btn-primary">My Item</a>
-                        <a href="mybidding" class = "btn btn-primary">My Bidding</a>
-                        <a href="winbidding" class = "btn btn-primary">Win Bidding</a>
+                        <a href="myitem" class = "myButton">My Item</a>
+                        <a href="mybidding" class = "myButton">My Bidding</a>
+                        <a href="winbidding" class = "myButton">Win Bidding</a>
 
 		</div>
 	</section>
 	<section>
 		<div class = "container">
-                        <a href="../auction" class = "btn btn-primary">GO to list</a>
-                        <a href="../auction/itemadd/" class = "btn btn-primary">Add Item!</a>   
+                        <a href="../auction" class = "myButton">GO to list</a>
+                        <a href="../auction/itemadd/" class = "myButton">Add Item!</a>   
                 </div>
 	</section>
         <seceion>
@@ -45,11 +45,11 @@
                                         <td> {{detail.reserved_price}} </td>
                                         <td> {{detail.state}} </td>
 					{% if detail.on_going = 1 %}
-                                                <td> <a href="../bidding/{{detail.item_id}}" class = "btn btn-primary"> On going </a> </td>
+                                                <td> <a href="../bidding/{{detail.item_id}}" class = "myButton"> On going </a> </td>
 					{% elif detail.on_going = 2 %}
-                                                <td> <a href="../bidding/{{detail.item_id}}" class = "btn btn-primary"> Sold out </a> </td>
+                                                <td> <a href="../bidding/{{detail.item_id}}" class = "myButton"> Sold out </a> </td>
 					{% else %}	
-						<td> <a href="../auction/addauction/{{detail.item_id}}" class = "btn btn-primary"> Join Auction </a> </td>
+						<td> <a href="../auction/addauction/{{detail.item_id}}" class = "myButton"> Join Auction </a> </td>
 					{% endif %}
                                 </tr>
                         {% endfor %}

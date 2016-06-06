@@ -17,7 +17,7 @@
 	</section>
         <section>
                 <div class = "container">
-                        <a href="../mypage/myitem" class = "btn btn-primary">My page</a>
+                        <a href="../mypage/myitem" class = "myButton">My page</a>
                 </div>
         </section>
 	<section>
@@ -34,7 +34,7 @@
 					<td> {{detail.book_id}} </td>
 					<td> {{detail.current_price}} </td>
 					<td> {{detail.due_date}} </td>
-					<td> <a href="../bidding/{{detail.auction_id}}" class = "btn btn-primary">BIDDING NOW! </a> </td>
+					<td> <a href="../bidding/{{detail.auction_id}}" class = "myButton">BIDDING NOW! </a> </td>
 				</tr>
 			{% endfor %}
                        	{% for detail in finish_detail %}
@@ -42,7 +42,7 @@
                                         <td> {{detail.book_id}} </td>
                                         <td> {{detail.current_price}} </td>
                                         <td> {{detail.due_date}} </td>
-                                        <td> <a href="../bidding/{{detail.auction_id}}" class = "btn btn-primary"> FINISHED </a> </td>
+                                        <td> <a href="../bidding/{{detail.auction_id}}" class = "myButton"> FINISHED </a> </td>
 				</tr>
 			{% endfor %}
 			</table>

@@ -10,6 +10,7 @@ import datetime
 def auction(request):
 	close_auction(request)
         all_entries = auction_list.objects.all().order_by('due_date')
+	
 	data = {
 		"ongoing_detail" : all_entries.filter(bidding_state = True),
 		"finish_detail" : all_entries.filter(bidding_state = False)
@@ -19,7 +20,6 @@ def auction(request):
 
 def add_item(request):
         current_user = request.user.id
-#	user = user_profile.objects.get(id = current_user)
 
 	if(request.method == "POST"):
 		edit_form = ItemListForm(request.POST)
@@ -59,11 +59,6 @@ def add_auction(request, item_id):
 def close_auction(request):
 	now = datetime.datetime.now()
 	past_entries = auction_list.objects.filter(due_date__lte = now)
-#	users = user_profile.objects.all()
-#	winner = users.get(user_id = past.expected_winner)
-#	past.save()
-#        current_user = request.user.id
-#        user = user_profile.objects.get(id = current_user)
 
 	for past in past_entries:
 		if(past.bidding_state == True):

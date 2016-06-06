@@ -18,6 +18,7 @@ def bidding_list(request, auction_id):
 		"list_detail" : entries,
 		"auction_info" : auction,
 		"item_info" : item,
+		"seller" : seller,
 	}
 
 	if(auction.bidding_state == False):
@@ -44,7 +45,7 @@ def add_bidding(request, auction_id):
                         	post.auction_id = auction_id
                         	post.save()
 				entry.current_price = post.suggest_price
-				entry.expected_winner = request.user.userid
+				entry.expected_winner = request.user.id
 				entry.save()
                         	edit_form.save_m2m()
                 		return HttpResponseRedirect('../')

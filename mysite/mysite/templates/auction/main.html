@@ -21,8 +21,6 @@
 			<table class = "table">
 			<tr>
 				<th><center> Book name </center></th>
-				<th><center> Author </center></th>
-				<th><center> Edition </center></th>
 				<th><center> Current price </center></th>
 				<th><center> Due date </center></th>
 				<th><center> BIDDING </center></th>
@@ -30,8 +28,6 @@
 			{% for detail in ongoing_detail %}
 				<tr>
 					<td><center> {{detail.book_name}} </center></td>
-					<td><center> {{detail.author}} </center></td>
-					<td><center> {{detail.edition}} </center></td>
 					<td><center> {{detail.current_price}} </center></td>
 					<td><center> {{detail.due_date}} </center></td>
 					<td><center> <a href="../bidding/{{detail.auction_id}}" class = "myButton">BIDDING NOW! </a> </center></td>

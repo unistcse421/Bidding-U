@@ -18,24 +18,18 @@
                 <div></div>
                 <div class="container">
                         {% include "_messages.html" %}
-                        <center><h2>Seller : {{seller.username}}</h2></center>
-                        <h2>Book_name : {{item_info.book_name}}</h2>
-			<h2>Author : {{item_info.author}}</h2>
-			<h2>Edition : {{item_info.edition}}</h2>
-                        <h2>Original price : {{item_info.reserved_price}}</h2>
-                        <h2>Current price : {{auction_info.current_price}}</h2>
-                        <h2>Due date : {{auction_info.due_date}}</h2>
+                        <h3>Seller : {{seller.username}}</h3>
+                        <h3>Book (edition) : {{item_info.book_name}} ( {{item_info.edition}} )</h3>
+                        <h3>Author : {{item_info.author}}</h3>
+                        <h3>Original price : {{item_info.reserved_price}}</h3>
+                        <h3>Current price : {{auction_info.current_price}}</h3>
+                        <h3>Due date : {{auction_info.due_date}}</h3>
                 </div>
                 <div class="container">
-                        <a href="addbidding" class = "biddingButton">BIDDING</a>
+                        <h3 class="important"><center> You cannot bidding your Auction</center><h3>
                 </div>
                 </div>
         </section>
-        <section>
-                <div class="container">
-			<h3 class="important"><center> You cannot bidding your Auction</center><h3>
-               	</div>
-	</section>
 	<section>
                 <div class="container">
                        <center><a href="../../auction" class = "myButton">Back to Auction list</a></center>

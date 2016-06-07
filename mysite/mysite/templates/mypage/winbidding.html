@@ -17,7 +17,7 @@
                         <a href="myitem" class = "homeButton">My Item</a>
                         <a href="mybidding" class = "homeButton">My Bidding</a>
                         <a href="winbidding" class = "homeButton">Win Bidding</a>
-
+                        <a href="../auction/itemadd/" class = "homeButton">Add Item</a>
 		</div>
 	</section>
         <section>
@@ -30,14 +30,12 @@
                         <table class = "table">
                         <tr>
 				<th><center> Seller </center></th>
-				<th><center> Phone # </center></th>
-                                <th><center> Item id </center></th>
+                                <th><center> Book name </center></th>
                                 <th><center> Price </center></th>
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
 					<td><center> {{seller_info.username}} </center></td>
-                                        <td><center> {{seller_info.phone}} </center></td>
                                         <td><center> {{detail.item_id}} </center></td>
                                         <td><center> {{detail.price}} </center></td>
                                 </tr>
@@ -48,14 +46,12 @@
                         <table class = "table">
                         <tr>
                                 <th><center> Buyer </center></th>
-                                <th><center> Phone # </center></th>
-                                <th><center> Item id </center></th>
+                                <th><center> Book name </center></th>
                                 <th><center> Price </center></th>
                         </tr>
                         {% for detail in list_detail2 %}
                                 <tr>
                                         <td><center> {{buyer_info.username}} </center></td>
-                                        <td><center> {{buyer_info.phone}} </center></td>
                                         <td><center> {{detail.item_id}} </center></td>
                                         <td><center> {{detail.price}} </center></td>
                                 </tr>

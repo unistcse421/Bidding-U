@@ -17,7 +17,7 @@
 			<a href="myitem" class = "homeButton">My Item</a>
 			<a href="mybidding" class = "homeButton">My Bidding</a>
                         <a href="winbidding" class = "homeButton">Win Bidding</a>
-
+                        <a href="../auction/itemadd/" class = "homeButton">Add Item</a>
 		</div>
 	</section>
         <section>
@@ -32,12 +32,15 @@
                                 <th><center> Book name </center></th>
                                 <th><center> Suggest price </center></th>
                                 <th><center> Suggest time </center></th>
+				<th><center> Bid again </center></th>
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
                                         <td><center> {{detail.book_name}} </center></td>
                                         <td><center> {{detail.suggest_price}} </center></td>
                                         <td><center> {{detail.suggest_time}} </center></td>
+				        <td> <center><a href="../../bidding/{{detail.item_id}}" class = "myButton"> Bid again? </a> </center></td>
+
                                 </tr>
                         {% endfor %}
                         </table>

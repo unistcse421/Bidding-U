@@ -22,6 +22,7 @@ def myitem(request):
 def mybidding(request):
         current_user = request.user.id
         all_entries = candidate_list.objects.filter(user_id = current_user)
+	
         data = {
                 "list_detail" : all_entries,
         }

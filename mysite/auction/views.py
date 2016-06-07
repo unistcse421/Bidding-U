@@ -46,6 +46,7 @@ def add_auction(request, item_id):
 			post.item_id = item_id
 			post.current_price = item_entry.reserved_price
 			post.book_name= item_entry.book_name
+			post.expected_winner = request.user.id
 			post.save()
 			item_entry.on_going = 1
 			item_entry.save()

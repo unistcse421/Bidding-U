@@ -10,7 +10,7 @@
         <section class="jumbotron">
                 <div class="container">
                         {% include "_messages.html" %}
-                        <h1>{% blocktrans %}BIDDING LIST{% endblocktrans %}</h1>
+                        <h1>{% blocktrans %}Bidding list{% endblocktrans %}</h1>
                 </div>
         </section>
         <section class="jumbotron2">
@@ -21,7 +21,8 @@
                         <h3>Seller : {{seller.username}}</h3>
                         <h3>Book (edition) : {{item_info.book_name}} ( {{item_info.edition}} )</h3>
                         <h3>Author : {{item_info.author}}</h3>
-                        <h3>Original price : {{item_info.reserved_price}}</h3>
+                         <h3>State : {{item_info.state}}</h3>
+ 			<h3>First price : {{item_info.reserved_price}}</h3>
                         <h3>Current price : {{auction_info.current_price}}</h3>
                         <h3>Due date : {{auction_info.due_date}}</h3>
                 </div>

@@ -29,14 +29,14 @@
                 <div class = "container">
                         <table class = "table">
                         <tr>
-                                <th><center> Book name </center></th>
+                                <th><center> Auction id </center></th>
                                 <th><center> Suggest price </center></th>
                                 <th><center> Suggest time </center></th>
 				<th><center> Bid again </center></th>
                         </tr>
                         {% for detail in list_detail %}
                                 <tr>
-                                        <td><center> {{detail.book_name}} </center></td>
+                                        <td><center> {{detail.auction_id}} </center></td>
                                         <td><center> {{detail.suggest_price}} </center></td>
                                         <td><center> {{detail.suggest_time}} </center></td>
 				        <td> <center><a href="../../bidding/{{detail.item_id}}" class = "myButton"> Bid again? </a> </center></td>
